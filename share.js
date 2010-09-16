@@ -5,11 +5,16 @@
 	
 	var facebook = "<p><a href=\"http://www.facebook.com/sharer.php?u=" + window.location + "&t=" + encodeURIComponent(event_title) + "\" class=\"fb-share icon url icon-minus\"><img src=\"" + facebook_image + "\" alt=\"Share on Facebook\"><span>Share on Facebook</span></a></p>";
 	var tweet = "Event: " + decodeURIComponent(event_title) + " " + decodeURIComponent(window.location);
-	var twitter = "<p><a href=\"http://twitter.com/home?status=" + encodeURIComponent(tweet) + "\" class=\"icon url icon-minus\"><img src=\"" + twitter_image + "\" alt=\"Share on Twitter\"><span>Share on Twitter</span></a></p>";
+	var twitter = "<p><a href=\"http://twitter.com/home?status=" + encodeURIComponent(tweet) + "\" class=\"twitter-share icon url icon-minus\"><img src=\"" + twitter_image + "\" alt=\"Share on Twitter\"><span>Share on Twitter</span></a></p>";
 	var append = facebook + twitter;
 	$("div.item-meta:first").append(append);
 
 	$("a.fb-share").click(function(e) {
 		e.preventDefault();
 		window.open("http://www.facebook.com/sharer.php?u=" + window.location + "&t=" + encodeURIComponent(event_title), "facebookshare", "width=626,height=340");
+	});
+	
+	$("a.twitter-share").click(function(e) {
+		e.preventDefault();
+		window.open("http://twitter.com/share/?url=" + window.location + "&text=" + encodeURIComponent("Event: " + event_title), "twittershare", "width=550,height=450");
 	});
