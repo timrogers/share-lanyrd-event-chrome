@@ -1,0 +1,14 @@
+{
+  "name": "Share Lanyrd Event",
+  "version": "1.0",
+  "icons": { "48": "icon48.png",
+			"128": "icon128.png" },
+  "description": "Add links to Lanyrd to share events on Facebook and Twitter.",
+  "content_scripts": [
+	{
+	"matches": ["http://lanyrd.com/*"],
+	"js": ["jquery.js", "share.js"]
+
+	}
+	]
+}
